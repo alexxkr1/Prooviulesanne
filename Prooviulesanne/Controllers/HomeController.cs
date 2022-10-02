@@ -20,6 +20,23 @@ namespace Prooviulesanne.Controllers
             return View(await _context.Event.ToListAsync());
         }
 
+        public ActionResult Details([Bind(Prefix = "id")] int EventId)
+        {
+            var model = _context.Event
+                .Include(e => e.Enterprises)
+                .Include(e => e.Citizens)
+                .FirstOrDefault(r => r.Id == EventId);
+            if (model == null)
+            {
+                return NotFound();
+
+            }
+            return View(model);
+        }
+
+
+
+
         public IActionResult Privacy()
         {
             return View();
