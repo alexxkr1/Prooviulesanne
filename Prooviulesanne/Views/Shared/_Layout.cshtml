@@ -13,27 +13,83 @@
     <div class="container">
         <div class="row">
 
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Prooviulesanne</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="140px" height="40px" viewBox="0 0 140 40" enable-background="new 0 0 140 40" xml:space="preserve">
+                        <g>
+                        <g>
+                        <path fill="#005AA2" d="M126.362,36H10.769c-3.372,0-5.638-2.266-5.638-5.639V10.395c0-3.373,2.266-5.638,5.638-5.638h86.169
+                           v0.768H10.769c-2.958,0-4.87,1.912-4.87,4.871v19.967c0,2.959,1.912,4.871,4.87,4.871h115.593c2.958,0,4.87-1.912,4.87-4.871
+                           V10.395c0-2.958-1.912-4.871-4.87-4.871h-15.764V4.756h15.764c3.372,0,5.638,2.266,5.638,5.638v19.967
+                           C132,33.734,129.734,36,126.362,36z" />
+                   </g>
+                        <g>
+                        <path fill="#005AA2" d="M10.175,31.166V8.921h3.136l7.129,11.254c1.65,2.607,2.938,4.951,3.994,7.229l0.066-0.033
+                           c-0.264-2.971-0.33-5.677-0.33-9.143V8.921h2.707v22.245h-2.905l-7.063-11.287c-1.551-2.476-3.036-5.017-4.159-7.426l-0.099,0.033
+                           c0.165,2.805,0.231,5.479,0.231,9.175v9.505H10.175z" />
+                        <path fill="#005AA2" d="M34.76,8.921V22.09c0,4.984,2.211,7.096,5.182,7.096c3.3,0,5.413-2.178,5.413-7.096V8.921h2.905v12.971
+                           c0,6.832-3.598,9.637-8.417,9.637c-4.555,0-7.987-2.607-7.987-9.505V8.921H34.76z" />
+                        <path fill="#005AA2" d="M53.239,8.921h2.872v19.836h9.505v2.408H53.239V8.921z" />
+                        <path fill="#005AA2" d="M68.814,8.921h2.872v19.836h9.505v2.408H68.814V8.921z" />
+                        <path fill="#005AA2" d="M87.987,24.17l-2.31,6.996h-2.971l7.558-22.245h3.466l7.591,22.245h-3.069l-2.376-6.996H87.987z
+                            M95.282,21.926l-2.179-6.403c-0.495-1.453-0.825-2.772-1.155-4.06h-0.066c-0.33,1.32-0.692,2.673-1.122,4.026l-2.178,6.437
+                           H95.282z" />
+                        <path fill="#005AA2" d="M123.201,21.396c-0.165-3.102-0.363-6.832-0.33-9.604h-0.099c-0.76,2.607-1.684,5.38-2.806,8.449
+                           l-3.928,10.793h-2.178l-3.598-10.595c-1.057-3.135-1.947-6.007-2.574-8.647h-0.066c-0.066,2.772-0.231,6.502-0.429,9.835
+                           l-0.595,9.538h-2.739l1.552-22.245h3.663l3.796,10.759c0.924,2.739,1.683,5.183,2.244,7.492h0.099
+                           c0.562-2.244,1.354-4.687,2.344-7.492l3.961-10.759h3.663l1.386,22.245h-2.805L123.201,21.396z" />
+                   </g>
+               </g>
+               </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active " asp-controller="Home" asp-action="Index" aria-current="page">Avaleht</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active">Ürituste lisamine</a>
+                            </li>
+
+                        </ul>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px"
+                             height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                        <g id="Layer_1">
+                        <rect fill="#005AA2" width="60" height="59.999" />
+                        <rect fill="none" stroke="#005AA2" stroke-width="0.03" stroke-miterlimit="3.864" width="60" height="60" />
+                        <path fill="#FFFFFF" d="M2.576,29.791c0-14.757,12.32-26.868,27.354-26.868s27.354,12.111,27.354,26.868
+                c0,14.755-12.32,26.798-27.354,26.798S2.576,44.547,2.576,29.791" />
+                        <path fill="none" stroke="#005AA2" stroke-width="0.03" stroke-miterlimit="3.864" d="M2.576,29.791
+                c0-14.757,12.32-26.868,27.354-26.868s27.354,12.111,27.354,26.868c0,14.755-12.32,26.798-27.354,26.798S2.576,44.547,2.576,29.791
+                z" />
+                        <path fill="#005AA2" d="M5.778,29.791c0-13.016,10.789-23.735,23.944-23.735s23.944,10.719,23.944,23.735
+                S42.877,53.457,29.722,53.457S5.778,42.807,5.778,29.791" />
+                        <path fill="none" stroke="#005AA2" stroke-width="0.03" stroke-miterlimit="3.864" d="M5.778,29.791
+                c0-13.016,10.789-23.735,23.944-23.735s23.944,10.719,23.944,23.735S42.877,53.457,29.722,53.457S5.778,42.807,5.778,29.791z" />
+                        <text transform="matrix(1 0 0 1 18.25 46.875)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="48">¥</text>
+        </g>
+                        <g id="Layer_2">
+                        <path fill="#FFFFFF" d="M26.846,11.084c0-1.88,1.531-3.481,3.41-3.481c1.88,0,3.48,1.602,3.48,3.481c0,1.878-1.6,3.41-3.48,3.41
+                C28.377,14.495,26.846,12.963,26.846,11.084" />
+                        <path fill="none" stroke="#005AA2" stroke-width="0.03" stroke-miterlimit="3.864" d="M28.795,11.084
+                c0-0.766,0.695-1.462,1.461-1.462s1.461,0.696,1.461,1.462c0,0.765-0.695,1.461-1.461,1.461
+                C29.491,12.545,28.795,11.849,28.795,11.084z" />
+                        <path fill="#005AA2" d="M28.795,11.084c0-0.766,0.695-1.462,1.461-1.462s1.461,0.696,1.461,1.462c0,0.765-0.695,1.461-1.461,1.461
+                C29.491,12.545,28.795,11.849,28.795,11.084" />
+                        <path fill="none" stroke="#005AA2" stroke-width="0.03" stroke-miterlimit="3.864" d="M26.846,11.084
+                c0-1.88,1.531-3.481,3.41-3.481c1.88,0,3.48,1.602,3.48,3.481c0,1.878-1.6,3.41-3.48,3.41
+                C28.377,14.495,26.846,12.963,26.846,11.084z" />
+        </g>
+            </svg>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
