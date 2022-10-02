@@ -12,5 +12,9 @@ namespace Proov.Data
             : base(options)
         {
         }
+
+        public DbSet<Citizen> Employee { get; set; }
+        public DbSet<Enterprise> Company { get; set; }
+        public DbSet<Event> Event { get; set; }
     }
 }

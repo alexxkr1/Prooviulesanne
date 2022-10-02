@@ -24,4 +24,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Proov.Models\Prooviulesanne.Models.csproj" />
+  </ItemGroup>
+
 </Project>
