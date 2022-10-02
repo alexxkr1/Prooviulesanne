@@ -1,0 +1,22 @@
+﻿@model Prooviulesanne.Models.Domain.Citizen
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>Kas soovid kustuda?</h3>
+<div>
+    <hr />
+    <dl class="row">
+
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+          
+                <a asp-action="Index" style="background-color: #D2D2CF; color: black;"  class="btn btn-primary" asp-route-Id="@Model.EventId">Tagasi</a>
+            <input type="submit" value="Kustuta" class="btn btn-danger" /> 
+        </form>
+</div>
