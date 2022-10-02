@@ -1,0 +1,60 @@
+﻿@model Prooviulesanne.Models.Domain.Event
+
+
+@{
+    ViewData["Title"] = "Ürituse Loomine";
+}
+
+
+<div class="row">
+    <div class="col-3 left-side text-center" id="lisamine">
+
+        <p id="ytext">Ürituse lisamine</p>
+    </div>
+    <div class="col-9">
+
+        <img id="image" class="fit-image" src="~/img/libled.jpg" alt="randomimage">
+    </div>
+
+
+</div>
+<div class="justify-content-center" style="background-color: white" id="midcontainer">
+    <form asp-action="CreateEvent">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row mb-3">
+            <label asp-for="EventName" class="col-sm-2 col-form-label">Ürituse Nimi</label>
+            <div class="col-sm-10">
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="StartTime" class="col-sm-2 col-form-label">Toimumisaeg</label>
+            <div class="col-sm-10">
+                <input data-format="MM/dd/yyyy" asp-for="StartTime" class="form-control">
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="StartingPlace" class="col-sm-2 col-form-label">Koht</label>
+            <div class="col-sm-10">
+                <input asp-for="StartingPlace" class="form-control">
+                <span asp-validation-for="StartingPlace" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Details" class="col-sm-2 col-form-label">Lisainfo</label>
+            <div class="col-sm-10">
+                <textarea asp-for="Details" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Details" class="text-danger"></span>
+
+            </div>
+        </div>
+        <button type="submit" style="background-color: #D2D2CF; color: black;" asp-controller="Home" asp-action="Index" class="btn btn-primary">Tagasi</button>
+        <button type="submit" value="Create" class="btn btn-primary">Lisa</button>
+    </form>
+</div>
+
+
+
