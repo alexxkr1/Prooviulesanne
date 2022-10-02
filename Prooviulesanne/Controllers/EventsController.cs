@@ -25,7 +25,7 @@ namespace Prooviulesanne.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateEvent([Bind("Id,ÜrituseNimi,ToimumisAeg,ToimumiseKoht,LisaInfo")] Event events)
+        public async Task<IActionResult> CreateEvent([Bind("Id,EventName,StartTime,StartingPlace,Details")] Event events)
         {
             if (ModelState.IsValid)
             {

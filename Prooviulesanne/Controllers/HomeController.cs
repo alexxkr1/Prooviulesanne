@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Proov.Data;
 using Prooviulesanne.Models;
 using System.Diagnostics;
@@ -14,9 +15,9 @@ namespace Prooviulesanne.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.Event.ToListAsync());
         }
 
         public IActionResult Privacy()

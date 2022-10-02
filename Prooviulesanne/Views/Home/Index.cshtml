@@ -1,8 +1,127 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Prooviulesanne.Models.Domain.Event>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Home Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Proov.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div class="row">
+
+        <div class="col-md-6" style="background-color: #005aa1; text-align: center;" id="randomtext">
+            <p id="atext" style="color: white;">Sad nec elit vestibulum, <b>tincidunt ori</b> et, sagittis ex. Vestibulum rutrum <b>neque suscipit</b> ante mattis maximus. Nulla non sapien <b>viverra, lobortis lorem non</b> accumsan metus.</p>
+        </div>
+
+        <div class="col-md-6">
+            <img id="image2" src="~/img/pilt.jpg" alt="randomgimage">
+        </div>
+        <div id="spacing"></div>
+
+
+        <div class="col-md-6 " id="padding">
+            <div class="col-12" text-center" id="caption">Tulevased üritused</div>
+            <div class="col-12" style="background-color: white" id="captioncont">
+                <table class="table">
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            DateTime date1 = DateTime.Now;
+                            DateTime date2 = item.StartTime;
+
+
+                            @if (date1 < date2)
+                            {
+                                <tr>
+                                    <td>
+                                        <a asp-controller="Person" asp-action="Index" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.EventName)</a>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartingPlace)
+                                    </td>
+                                    <td>
+                                        Osavõtjad
+                                    </td>
+                                    <td>
+                                        <a asp-controller="Üritus" asp-action="Delete" asp-route-id="@item.Id">
+                                            <svg enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="22px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <path d="M20.377,16.519l6.567-6.566c0.962-0.963,0.962-2.539,0-3.502l-0.876-0.875c-0.963-0.964-2.539-0.964-3.501,0  L16,12.142L9.433,5.575c-0.962-0.963-2.538-0.963-3.501,0L5.056,6.45c-0.962,0.963-0.962,2.539,0,3.502l6.566,6.566l-6.566,6.567  c-0.962,0.963-0.962,2.538,0,3.501l0.876,0.876c0.963,0.963,2.539,0.963,3.501,0L16,20.896l6.567,6.566  c0.962,0.963,2.538,0.963,3.501,0l0.876-0.876c0.962-0.963,0.962-2.538,0-3.501L20.377,16.519z"
+                                          fill="#515151" />
+        </svg>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+                </table>
+
+                <a id="buttonprim" class="btn btn-primary" asp-controller="Events" asp-action="CreateEvent">Ürituste lisamine</a>
+
+            </div>
+        </div>
+
+        <div class="col-md-6 suurus" id="padding2">
+            <div class="col-12 " id="caption">Toimunud üritused</div>
+
+            <div class="col-12" style="background-color: white" id="captioncont">
+                <table class="table">
+                    <thead>
+
+                    <tbody>
+                            @foreach (var item in Model)
+                            {
+
+
+                                DateTime date1 = DateTime.Now;
+                                DateTime date2 = item.StartTime;
+    
+                                @if (date1 > date2)
+                                {
+
+                                <tr>
+                                    <td>
+                                            @Html.DisplayFor(modelItem => item.EventName)
+                                    </td>
+                                    <td>
+                                            @Html.DisplayFor(modelItem => item.StartTime)
+                                    </td>
+                                    <td>
+                                            @Html.DisplayFor(modelItem => item.StartingPlace)
+                                    </td>
+                                    <td>
+                                        Osavõtjad
+                                    </td>
+                                </tr>
+                                }
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
