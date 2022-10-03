@@ -59,20 +59,20 @@
     <hr />
     <form>
         <label class="radio-inline">
-            <input checked type="radio" name="radio" onclick='document.getElementById("eraisik-form").style.visibility="visible" ; document.getElementById("ettevotte-form").style.visibility="collapse"' id="eraisik">eraisik
+            <input checked type="radio" name="radio" onclick='document.getElementById("eraisik-form").style.display="none" ; document.getElementById("ettevotte-form").style.display="block"' id="eraisik">eraisik
         </label>
         <label class="radio-inline">
-            <input type="radio" name="radio" onclick='document.getElementById("eraisik-form").style.visibility="collapse" ; document.getElementById("ettevotte-form").style.visibility="visible"' id="ettevõtte">ettevõtte
+            <input type="radio" name="radio" onclick='document.getElementById("eraisik-form").style.display="block" ; document.getElementById("ettevotte-form").style.display="none"' id="ettevõtte">ettevõtte
         </label>
     </form>
 
 
 
-    <div id="eraisik-form" style="visibility: collapse;">
+    <div id="eraisik-form" style="display: none;">
         <partial name="_Create" model="@(new Prooviulesanne.Models.Domain.Enterprise(){EventId=Model.Id})" />
 
     </div>
-    <div id="ettevotte-form" style="visibility: collapse;">
+    <div id="ettevotte-form" style="display: block;">
         <partial name="_CreateCitizen" model="@(new Prooviulesanne.Models.Domain.Citizen(){EventId=Model.Id})" />
 
     </div>
