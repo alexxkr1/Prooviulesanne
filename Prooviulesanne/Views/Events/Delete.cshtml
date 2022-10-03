@@ -1,0 +1,21 @@
+﻿@model Prooviulesanne.Models.Domain.Event
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>Kas soovid kustuda?</h3>
+<div>
+    <hr />
+    <dl class="row">
+
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Kustuta" class="btn btn-danger" /> |
+        <a asp-action="Index">Tagasi</a>
+    </form>
+</div>

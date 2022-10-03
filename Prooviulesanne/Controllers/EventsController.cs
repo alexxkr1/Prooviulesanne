@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Proov.Data;
 using Prooviulesanne.Models.Domain;
 
@@ -34,6 +35,43 @@ namespace Prooviulesanne.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View(events);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var @event = await _context.Event
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (@event == null)
+            {
+                return NotFound();
+            }
+
+            return View(@event);
+        }
+
+  
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+        
+            var @event = await _context.Event
+                .Include(e => e.Citizens)
+                .Include(e => e.Enterprises)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            foreach (var enterprise in @event.Enterprises)
+            {
+                _context.Company.Remove(enterprise);
+            }
+            _context.Event.Remove(@event);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
