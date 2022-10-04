@@ -13,18 +13,6 @@ namespace Prooviulesanne.Controllers
         {
             _context = context;
         }
-   
-        public ActionResult Index([Bind(Prefix = "id")] int EventId)
-        {
-            var model = _context.Event
-                .Include(e => e.Enterprises)
-                .FirstOrDefault(r => r.Id == EventId);
-            if (model == null)
-            {
-                return NotFound();
-            }
-            return View(model);
-        }
 
 
 

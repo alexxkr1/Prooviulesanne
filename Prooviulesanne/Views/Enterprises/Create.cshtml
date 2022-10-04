@@ -1,0 +1,46 @@
+﻿@model Prooviulesanne.Models.Domain.Enterprise
+@using Prooviulesanne.Models.Domain
+
+<div class="row">
+	<h1>Vead</h1>
+	<div class="col-md-4">
+		<form asp-controller="Enterprises" asp-action="Create">
+			<input asp-for="EventId" type="hidden" />
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="EnterpriseName" class="control-label"></label>
+				<input asp-for="EnterpriseName" class="form-control" />
+				<span asp-validation-for="EnterpriseName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="BusinessIdentificationNumber" class="control-label"></label>
+				<input asp-for="BusinessIdentificationNumber" class="form-control" />
+				<span asp-validation-for="BusinessIdentificationNumber" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AttendanceNumber" class="control-label"></label>
+				<input asp-for="AttendanceNumber" class="form-control" />
+				<span asp-validation-for="AttendanceNumber" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Details" class="control-label"></label>
+				<input asp-for="Details" class="form-control" />
+				<span asp-validation-for="Details" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="PaymentType" class="control-label"></label>
+				<select asp-for="PaymentType" class="form-control" asp-items="Html.GetEnumSelectList<PaymentType>()"></select>
+				<span asp-validation-for="PaymentType" class="text-danger"></span>
+			</div>
+			<br />
+
+			<div class="form-group">
+				<a type="submit" style="background-color: #D2D2CF; color: black;" asp-controller="Home" asp-action="Details" asp-route-id="@Model.EventId" class="btn btn-primary">Tagasi</a>
+			
+				<input type="submit" value="Lisa ettevõtte" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+

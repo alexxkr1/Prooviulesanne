@@ -13,20 +13,6 @@ namespace Prooviulesanne.Controllers
             _context = context;
         }
 
-        public ActionResult Index([Bind(Prefix = "id")] int EventId)
-        {
-            var model = _context.Event
-                .Include(e => e.Citizens)
-                .FirstOrDefault(r => r.Id == EventId);
-            if (model == null)
-            {
-                return NotFound();
-            }
-            return View(model);
-        }
-
-
-
         [HttpGet]
         public ActionResult CreateCitizen(int EventId)
         {
@@ -39,10 +25,11 @@ namespace Prooviulesanne.Controllers
             {
                 _context.Employee.Add(participant);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Citizen", new { id = participant.EventId });
+                return RedirectToAction("Details", "Home", new { id = participant.EventId });
                 //return RedirectToAction("Index", "Home");
             }
             return View(participant);
+            
         }
 
 

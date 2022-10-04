@@ -26,7 +26,7 @@ namespace Prooviulesanne.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateEvent([Bind("Id,EventName,StartTime,StartingPlace,Details")] Event events)
+        public async Task<IActionResult> CreateEvent([Bind("Id,EventName,StartTime,StartingPlace,Details")] Event events )
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +68,10 @@ namespace Prooviulesanne.Controllers
             foreach (var enterprise in @event.Enterprises)
             {
                 _context.Company.Remove(enterprise);
+            }
+            foreach (var citizen in @event.Citizens)
+            {
+                _context.Employee.Remove(citizen);
             }
             _context.Event.Remove(@event);
             await _context.SaveChangesAsync();
