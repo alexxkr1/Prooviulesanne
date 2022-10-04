@@ -56,7 +56,7 @@ namespace Prooviulesanne.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employee", (string)null);
                 });
 
             modelBuilder.Entity("Prooviulesanne.Models.Domain.Enterprise", b =>
@@ -92,7 +92,7 @@ namespace Prooviulesanne.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("Company");
+                    b.ToTable("Company", (string)null);
                 });
 
             modelBuilder.Entity("Prooviulesanne.Models.Domain.Event", b =>
@@ -121,7 +121,7 @@ namespace Prooviulesanne.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Event");
+                    b.ToTable("Event", (string)null);
                 });
 
             modelBuilder.Entity("Prooviulesanne.Models.Domain.Citizen", b =>

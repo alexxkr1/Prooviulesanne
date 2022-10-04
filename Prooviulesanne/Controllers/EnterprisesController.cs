@@ -42,7 +42,7 @@ namespace Prooviulesanne.Controllers
             {
                 _context.Company.Add(participant);
                 _context.SaveChanges();
-                return RedirectToAction("Index", "Enterprises", new { id = participant.EventId });
+                return RedirectToAction("Details", "Home", new { id = participant.EventId });
                 //return RedirectToAction("Index", "Home");
             }
             return View(participant);

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Prooviulesanne.Models.Domain;
+using Prooviulesanne.Data;
 
 namespace Proov.Data
 {
