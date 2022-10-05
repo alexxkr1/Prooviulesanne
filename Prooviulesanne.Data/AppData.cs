@@ -32,7 +32,7 @@ namespace Prooviulesanne.Data
                                 {
                             new Citizen()
                             {
-                                FirstName = $"Alex{i}",
+                                FirstName = $"Alex {i}",
                                 LastName = "Kren",
                                 IdentificationNumber = 5521312,
                                 PaymentType = 0,
@@ -43,7 +43,7 @@ namespace Prooviulesanne.Data
                     context.Event.Add(
                               new Event
                               {
-                                  EventName = $"Rannamaja Pidu {i}",
+                                  EventName = $"Weekend Pidu {i}",
                                   StartTime = DateTime.ParseExact("15/06/2015 13:45:00", "dd/MM/yyyy HH:mm:ss", null),
                                   StartingPlace = "France",
                                   Details = "Fancy",
@@ -51,7 +51,7 @@ namespace Prooviulesanne.Data
                                   {
                             new Enterprise()
                             {
-                                EnterpriseName = $"Uusküla{i}",
+                                EnterpriseName = $"Uusküla AS {i}",
                                 BusinessIdentificationNumber = 5521312,
                                 AttendanceNumber = 3,
                                 PaymentType = 0,
@@ -70,7 +70,7 @@ namespace Prooviulesanne.Data
                                     {
                             new Enterprise()
                             {
-                                EnterpriseName = $"Tankigon{i}",
+                                EnterpriseName = $"Tankigon AS {i}",
                                 BusinessIdentificationNumber = 352232,
                                 AttendanceNumber = 18,
                                 PaymentType = (PaymentType)1,
@@ -81,7 +81,7 @@ namespace Prooviulesanne.Data
                             {
                                 new Citizen()
                                 {
-                                FirstName = $"Ramon{i}",
+                                FirstName = $"Ramon {i}",
                                 LastName = "Ernits",
                                 IdentificationNumber = 5521312,
                                 PaymentType = 0,

@@ -92,7 +92,7 @@
 
                                 <tr>
                                     <td>
-                                            @Html.DisplayFor(modelItem => item.EventName)
+                                        <a asp-controller="Home" asp-action="DetailsPast" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.EventName)</a>
                                     </td>
                                     <td>
                                             @Html.DisplayFor(modelItem => item.StartTime)

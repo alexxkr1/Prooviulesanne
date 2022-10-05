@@ -34,6 +34,19 @@ namespace Prooviulesanne.Controllers
             return View(model);
         }
 
+        public ActionResult DetailsPast([Bind(Prefix = "id")] int EventId)
+        {
+            var model = _context.Event
+                .Include(e => e.Enterprises)
+                .Include(e => e.Citizens)
+                .FirstOrDefault(r => r.Id == EventId);
+            if (model == null)
+            {
+                return NotFound();
+
+            }
+            return View(model);
+        }
 
 
 
